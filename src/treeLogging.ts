@@ -17,7 +17,7 @@ export function logAllPeopleInTree(topPerson: Person): void {
   while (workStack.length) {
     const currentPerson = workStack.pop() as Person;
     console.log(currentPerson.name);
-    for (let child of currentPerson.children) {
+    for (const child of currentPerson.children) {
       workStack.push(child);
     }
   }
@@ -41,7 +41,7 @@ export function logAllPeopleInTreeWithQueue(topPerson: Person): void {
   while (workQueue.length) {
     const currentPerson = workQueue.shift() as Person;
     console.log(currentPerson.name);
-    for (let child of currentPerson.children) {
+    for (const child of currentPerson.children) {
       workQueue.push(child);
     }
   }
