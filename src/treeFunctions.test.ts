@@ -38,3 +38,10 @@ test("test isDescendant function", () => {
   expect(isDescendant("Lyanna", "Eddard", createStarkTree())).toBe(false);
   expect(isDescendant("Jon", "Eddard", createLannisterTree())).toBe(false);
 });
+
+test("test isRecursiveDescendant function", () => {
+  expect(isDescendant("Jon", "Eddard", createStarkTree())).toBe(true);
+  expect(isDescendant("Rickard", "Eddard", createStarkTree())).toBe(false);
+  expect(isDescendant("Lyanna", "Eddard", createStarkTree())).toBe(false);
+  expect(isDescendant("Jon", "Rickard", createStarkTree())).toBe(true);
+});
